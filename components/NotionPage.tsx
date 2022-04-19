@@ -32,6 +32,7 @@ import { Footer } from './Footer'
 import { PageSocial } from './PageSocial'
 import { NotionPageHeader } from './NotionPageHeader'
 import { GitHubShareButton } from './GitHubShareButton'
+import { GraidentBackground } from './GradientBackground';
 
 import styles from './styles.module.css'
 
@@ -222,7 +223,8 @@ export const NotionPage: React.FC<types.PageProps> = ({
 
   if (!config.isServer) {
     // add important objects to the window global for easy debugging
-    const g = window as any
+    const g
+ = window as any
     g.pageId = pageId
     g.recordMap = recordMap
     g.block = block
@@ -262,7 +264,9 @@ export const NotionPage: React.FC<types.PageProps> = ({
   }
 
   return (
+ 
     <TwitterContextProvider value={twitterContextValue}>
+    <GraidentBackground />
       <PageHead
         pageId={pageId}
         site={site}
@@ -273,7 +277,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
       />
 
       {isLiteMode && <BodyClassName className='notion-lite' />}
-
+      
       <NotionRenderer
         bodyClassName={cs(
           styles.notion,
@@ -299,7 +303,10 @@ export const NotionPage: React.FC<types.PageProps> = ({
         footer={<Footer />}
       />
 
-      <GitHubShareButton />
+
+      
+
     </TwitterContextProvider>
+ 
   )
 }
