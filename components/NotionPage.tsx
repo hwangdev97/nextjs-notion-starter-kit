@@ -31,7 +31,6 @@ import { PageActions } from './PageActions'
 import { Footer } from './Footer'
 import { PageSocial } from './PageSocial'
 import { NotionPageHeader } from './NotionPageHeader'
-import { GitHubShareButton } from './GitHubShareButton'
 import { GraidentBackground } from './GradientBackground';
 
 import styles from './styles.module.css'
